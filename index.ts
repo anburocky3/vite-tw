@@ -91,7 +91,7 @@ async function main(): Promise<void> {
     },
     {
       path: "src/global.css",
-      content: `@import "tailwindcss";
+      content: `@import "tailwindcss"; \n@source "../index.html";
 `,
     },
     {
@@ -103,64 +103,36 @@ async function main(): Promise<void> {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>${projectName}</title>
   </head>
-  <body class="min-h-screen bg-[radial-gradient(circle_at_top,_#fde68a_0%,_#fff7ed_35%,_#fef2f2_60%,_#ffffff_100%)] text-slate-900">
-    <div class="pointer-events-none fixed inset-0 overflow-hidden">
-      <div class="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-amber-300/40 blur-3xl"></div>
-      <div class="absolute -bottom-20 right-0 h-80 w-80 rounded-full bg-rose-300/40 blur-3xl"></div>
-      <div class="absolute top-20 right-24 h-24 w-24 rounded-3xl border border-slate-200/60 bg-white/40 shadow-lg"></div>
-    </div>
-    <div class="relative mx-auto flex min-h-screen max-w-5xl flex-col justify-center px-6 py-16">
-      <div class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-600 shadow-sm">
-        <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
-        Ready to ship
-      </div>
-      <h1 class="mt-6 text-5xl font-black leading-tight text-slate-900 sm:text-6xl">
-        Vite + Tailwind, without the clutter.
-      </h1>
-      <p class="mt-4 max-w-2xl text-lg text-slate-600">
-        A crisp starter that keeps things fast, flexible, and focused. Edit
-        <code class="mx-1 rounded bg-white/70 px-2 py-1 text-sm text-slate-700 shadow">src/main.js</code>
-        and start building.
+  <body class="min-h-screen bg-slate-950 text-slate-100">
+    <main class="mx-auto flex min-h-screen max-w-2xl flex-col justify-center px-6 py-16">
+      <p class="text-xs uppercase tracking-[0.3em] text-orange-500 font-medium">Vite + Tailwind</p>
+      <h1 class="mt-4 text-6xl font-semibold ">Start building. 🏆</h1>
+      <p class="mt-5 text-sm text-slate-400">
+        Edit <code class="rounded bg-slate-900 px-2 py-1 text-slate-300">src/main.js</code> and go.
       </p>
-      <div class="mt-8 flex flex-wrap items-center gap-3">
-        <a
-          class="rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-slate-900/20 transition hover:-translate-y-0.5 hover:shadow-slate-900/30"
-          href="https://vitejs.dev"
-        >
-          Vite Docs
-        </a>
-        <a
-          class="rounded-full border border-slate-300 bg-white/80 px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm transition hover:-translate-y-0.5"
-          href="https://tailwindcss.com"
-        >
-          Tailwind Docs
-        </a>
+
+      <div class="mt-10 flex items-center gap-4 text-sm text-slate-400">
+        <p>Made with ❤️ by <a href="https://github.com/anburocky3" target="_blank" class="text-slate-100 underline" rel="noopener">@anburocky3</a></p>
       </div>
-      <div class="mt-12 grid gap-4 sm:grid-cols-3">
-        <div class="rounded-2xl border border-white/70 bg-white/70 p-4 shadow-sm">
-          <p class="text-sm font-semibold text-slate-800">Instant setup</p>
-          <p class="mt-2 text-sm text-slate-600">Zero configs to manage. Just run and go.</p>
-        </div>
-        <div class="rounded-2xl border border-white/70 bg-white/70 p-4 shadow-sm">
-          <p class="text-sm font-semibold text-slate-800">Modern styling</p>
-          <p class="mt-2 text-sm text-slate-600">Utility-first with a clean, warm palette.</p>
-        </div>
-        <div class="rounded-2xl border border-white/70 bg-white/70 p-4 shadow-sm">
-          <p class="text-sm font-semibold text-slate-800">Ship-ready</p>
-          <p class="mt-2 text-sm text-slate-600">Lean output and fast refresh out of the box.</p>
-        </div>
-      </div>
-      <p class="mt-10 text-xs text-slate-500">
-        Crafted by <a class="underline decoration-slate-300 hover:text-slate-700" href="https://github.com/anburocky3">@anburocky3</a>
-      </p>
-    </div>
+    </main>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>`,
     },
     {
       path: "src/main.js",
-      content: "import './global.css';\n\nconsole.log('App initialized');",
+      content: "import './global.css';\n",
+    },
+    {
+      path: ".gitignore",
+      content: `node_modules
+dist
+dist-ssr
+.vite
+.env
+.env.*
+.DS_Store
+`,
     },
   ];
 
