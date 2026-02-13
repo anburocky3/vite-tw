@@ -1,6 +1,6 @@
 {
   "name": "@anburocky3/vite-tw",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Scaffold a Vite + Tailwind CSS project instantly",
   "type": "module",
   "bin": {
