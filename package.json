@@ -1,0 +1,23 @@
+{
+  "name": "@anburocky3/vite-tw",
+  "version": "1.0.1",
+  "description": "Scaffold a Vite + Tailwind CSS project instantly",
+  "type": "module",
+  "bin": {
+    "vite-tw": "index.ts"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "index.ts",
+    "package.json"
+  ],
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "dependencies": {
+    "@clack/prompts": "^1.0.1",
+    "picocolors": "^1.0.0"
+  }
+}
